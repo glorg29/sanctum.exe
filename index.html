@@ -24,7 +24,7 @@
   <section class="arena-panel" aria-label="Game arena">
     <div class="arena-heading"><span id="phase">PHASE I / III</span><span id="wisps" aria-label="5 health remaining">●●●●●</span></div>
     <div class="stage">
-      <svg id="board" viewBox="0 0 560 560" role="img" aria-label="Eight by eight arena. Move the ghost with arrow keys or WASD; avoid marked tiles and collect halos.">
+      <svg id="board" viewBox="0 0 560 560" role="img" aria-label="Eight by eight arena. Move the ghost with arrow keys or WASD; avoid marked tiles, then press Space to strike the boss when the strike window opens.">
         <g id="tiles"></g><g id="warnings"></g><g id="flashes"></g><g id="spawns"></g><g id="items"></g><g id="projectiles"></g>
         <g id="ghost" transform="translate(280 420)">
           <ellipse cx="35" cy="60" rx="19" ry="5" fill="#000" opacity=".4"/>
@@ -34,19 +34,22 @@
       </svg>
       <div id="overlay" role="dialog" aria-modal="true" aria-labelledby="menu-title"></div>
       <div id="phase-notice" aria-live="polite"></div>
+      <div id="strike-notice" aria-live="polite">STRIKE! <kbd>Space</kbd></div>
       <div id="countdown" aria-live="polite" hidden></div>
     </div>
     <div class="arena-meta">
       <div class="score-display"><span>Score</span><strong id="score">000000</strong></div>
       <div id="phrase-steps" aria-label="Attack sequence"></div>
     </div>
-    <div class="beat-track" aria-hidden="true"><div id="beat-fill"></div></div>
     <div class="touch-controls" aria-label="Movement">
       <button data-move="up" aria-label="Move up">↑</button>
       <div><button data-move="left" aria-label="Move left">←</button><button data-move="down" aria-label="Move down">↓</button><button data-move="right" aria-label="Move right">→</button></div>
+      <button id="attack" class="attack-button" aria-label="Attack">Attack</button>
     </div>
   </section>
 </main>
+<div id="hurt-flash" aria-hidden="true"></div>
+<div id="jumpscare" aria-hidden="true" hidden><img id="jumpscare-image" src="easygab.png" alt=""></div>
 <script src="game.js"></script>
 </body>
 </html>
