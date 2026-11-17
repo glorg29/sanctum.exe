@@ -110,7 +110,7 @@ function playAttackSound() {
     osc.start(now); osc.stop(now + .21);
   } catch { /* Audio is optional. */ }
 }
-const screamAudio = new Audio('scream1.mp3');
+const screamAudio = new Audio('scream2.mp3');
 
 // ---- Jumpscare: shown when the player loses, then the result screen appears ----
 const JUMPSCARE_MS = 5500;
